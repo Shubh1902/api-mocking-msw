@@ -9,10 +9,6 @@ const Products = () => {
     fetch("https://dummyjson.com/products")
       .then((resp) => resp.json())
       .then(({ products }) => setProducts(products));
-    server.listen();
-    server.events.on("request:start", ({ request }) => {
-      console.log("MSW intercepted:", request.method, request.url);
-    });
   }, []);
 
   return (
